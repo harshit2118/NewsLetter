@@ -72,6 +72,9 @@ app.post("/",function(req,res){
    // console.log("Name :"+FirstName+" "+LastName+"\n"+"Email :"+Mail);
 });
 
+app.post("/Failure",function(req,res){
+    res.redirect("/");
+});
 
-app.listen(3006);
+app.listen(3006||process.env.PORT/*This is for dynamic port from server side (Heroku in this case)*/);
 //app id 1a1d62072c
