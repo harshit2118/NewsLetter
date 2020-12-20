@@ -1,11 +1,10 @@
-//jshint esversion
-
 
 //seting up an express
 const express     = require("express");
 const bodyParser  = require("body-parser");
 const https       = require("https");
-const { request } = require("http");
+
+//const { request } = require("http");
  
 const app         = express();
 
@@ -76,5 +75,7 @@ app.post("/Failure",function(req,res){
     res.redirect("/");
 });
 
-app.listen(3006||process.env.PORT/*This is for dynamic port from server side (Heroku in this case)*/);
+app.listen(3006||process.env.PORT/*This is for dynamic port from server side (Heroku in this case)*/,()=>{
+    console.log("server started");
+});
 //app id 1a1d62072c
